@@ -1,0 +1,16 @@
+.finish {
+  margin-left: 10px;
+}
+
+.active {
+  margin-left: 10px;
+}
+
+#addTask {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+body {
+  font-family: optima, sans-serif;
+}
