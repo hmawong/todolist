@@ -12,53 +12,37 @@
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-    <script src="js/application.js"></script>
+    <script src="index.js"></script>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center my-4">To Do List</h1>
+      <h1 class="text-center my-4">Your To-do List</h1>
+      <form class="col-12 text-center" id="addTask">
+        <span>What do you need to do today? </span><input class="mx-2" name="name" type="text" placeholder="Wash dishes" required/>
+        <button class="btn btn-primary btn-sm">Add New Task</button>
+      </form>
       <div class="row">
         <div class="col-12">
           <table class="table table-responsive">
             <thead>
               <tr>
-                <th scope="col">Product Name</th>
-                <th scope="col">Cost per unit</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
+                <th scope="col">Item</th>
+                <th scope="col">Date of Creation (dd mm yyyy)</th>
+                <th scope="col">Completed?</th>
+                <th scope="col">Delete</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="name">Salmon</td>
-                <td class="cost"><input type="number" value="60" /></td>
-                <td class="qty"><input type="number" value="3"/></td>
-                <td class="price"></td>
-                <td><button class="btn btn-danger btn-sm remove">Remove Product</button></td>
-              </tr>
-              <tr>
-                <td class="name">Beef</td>
-                <td class="cost"><input type="number" value="40" /></td>
-                <td class="qty"><input type="number" value="5"/></td>
-                <td class="price"></td>
-                <td><button class="btn btn-danger btn-sm remove">Remove Product</button></td>
-              </tr>
             </tbody>
           </table>
         </div>
-        <form class="col-12 mt-2 mb-4" id="addProduct">
-          <span>Product Name: </span><input class="mx-2" name="name" type="text" placeholder="Apple" required/>
-          <span>Cost per unit: </span><input class="mx-2" name="cost" type="number" placeholder="30"/>
-          <span>Quantity: </span><input class="mx-2" name="qty" type="number" placeholder="3"/>
-          <button class="btn btn-primary btn-sm">Add New Product</button>
-        </form>
-        <!-- portfolio value and profit -->
-        <div class="col-12 col-md-6">
-          <h2>Total Price: $<span id="totalPrice"></span></h2>
-        </div>
+        <br>
+        <button class="btn btn-info btn-sm all">Show All Task(s)</button>
+        <button class="btn btn-success btn-sm completed">Show Completed Task(s) only</button>
+        <button class="btn btn-warning btn-sm pending">Show Pending Task(s) only</button>
       </div>
     </div>
   </body>
