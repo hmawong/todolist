@@ -152,6 +152,7 @@ var completeTask = function (taskID, ele) {
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
       if (httpRequest.status === 200) {
         console.log(httpRequest.responseText);
+        $(ele).closest('tr').attr('class', 'completed');
         $(ele).closest('td').replaceWith('<td class="complete"><span>Yes<span><button class="btn btn-warning btn-sm active">Redo this Task</button></td>');
       } else {
         console.log(httpRequest.statusText);
@@ -170,7 +171,7 @@ var activateTask = function (taskID, ele) {
   httpRequest.onload = function() {
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
       if (httpRequest.status === 200) {
-        console.log(httpRequest.responseText);
+        $(ele).closest('tr').attr('class', 'pending');
         $(ele).closest('td').replaceWith('<td class="complete"><span>No<span><button class="btn btn-success btn-sm finish">Completed</button></td>');
       } else {
         console.log(httpRequest.statusText);
